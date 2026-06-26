@@ -1,0 +1,272 @@
+.titulo-hero {
+  font-size: clamp(2.2rem, 6vw, 4.6rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.fecha-navegacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.fecha-navegacion-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  text-align: center;
+}
+
+.fecha-navegacion-label {
+  font-weight: 700;
+}
+
+.fecha-navegacion-total {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.fecha-nav-boton {
+  border: 1px solid rgba(230, 237, 243, 0.14);
+  background: rgba(230, 237, 243, 0.05);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.fecha-nav-boton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.partidos-bloques {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.partidos-grupo {
+}
+
+.partidos-grupo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.2rem 0.25rem 0.5rem;
+}
+
+.partidos-grupo-titulo,
+.partidos-grupo-fecha,
+.equipos-grupo-header {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(230, 237, 243, 0.6);
+}
+
+.partidos-grupo-lista {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.inicio-seccion-titulo {
+  margin: 2rem 0 0.65rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #1e2530;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: rgba(230, 237, 243, 0.85);
+}
+
+.tabla-equipo {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.tabla-equipo-escudo {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.tabla-equipo-escudo-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: rgba(230, 237, 243, 0.12);
+  color: rgba(230, 237, 243, 0.8);
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.tabla-equipo a,
+.tabla-equipo span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1e2530;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  line-height: 0.95;
+}
+
+.tabla-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3rem;
+  margin-bottom: 0.65rem;
+  border-bottom: 1px solid #1e2530;
+}
+
+.tabla-header-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-bottom: 0.65rem;
+}
+
+.tabla-header-kicker {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(230, 237, 243, 0.45);
+}
+
+.tabla-header-titulo {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  line-height: 0.95;
+}
+
+.tabla-fila {
+  position: relative;
+}
+
+.tabla-fila-activa td:first-child {
+  box-shadow: inset 3px 0 0 var(--color-accent-green);
+}
+
+.tabla-fila-activa {
+  background: rgba(61, 220, 132, 0.05) !important;
+}
+
+.equipos-buscador {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid rgba(230, 237, 243, 0.14);
+  border-radius: 6px;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.equipos-buscador::placeholder {
+  color: rgba(230, 237, 243, 0.3);
+}
+
+.equipos-buscador:focus {
+  border-color: rgba(230, 237, 243, 0.35);
+}
+
+.equipos-sin-resultados {
+  padding: 1rem 0.2rem;
+  font-size: 0.92rem;
+  color: rgba(230, 237, 243, 0.45);
+}
+
+.equipos-listado {
+  display: grid;
+  gap: 1rem;
+}
+
+.equipos-grupo {
+  border-top: 1px solid #1e2530;
+}
+
+.equipos-grupo-header {
+  display: flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.45rem 0.2rem;
+  border-bottom: 1px solid #1e2530;
+}
+
+.equipos-grupo-lista {
+  display: grid;
+}
+
+.equipo-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3rem;
+  padding: 0 0.2rem;
+  border-bottom: 1px solid #1e2530;
+  color: var(--color-text);
+}
+
+.equipo-fila-main {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.equipo-fila-escudo {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.equipo-fila-nombre {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #d9e2ea;
+}
+
+.equipo-fila-chevron {
+  color: rgba(230, 237, 243, 0.42);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .fecha-navegacion {
+    flex-direction: column;
+  }
+}

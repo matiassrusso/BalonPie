@@ -1,0 +1,132 @@
+.partido-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 4.25rem;
+  padding: 0.85rem 1rem;
+  color: var(--color-text);
+  background: rgba(230, 237, 243, 0.03);
+  border: 1px solid rgba(230, 237, 243, 0.07);
+  border-radius: 12px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.partido-card:hover {
+  background: rgba(230, 237, 243, 0.055);
+  border-color: rgba(230, 237, 243, 0.12);
+}
+
+.partido-card-vivo {
+  border-left-width: 3px;
+  border-left-color: var(--color-accent-green);
+  background: rgba(61, 220, 132, 0.04);
+}
+
+.partido-card-vivo:hover {
+  background: rgba(61, 220, 132, 0.07);
+}
+
+.partido-card-equipo {
+  min-width: 0;
+}
+
+.partido-card-equipo-linea {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.partido-card-equipo-linea-derecha {
+  justify-content: flex-end;
+}
+
+.partido-card-equipo-nombre {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.partido-card-escudo {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.partido-card-escudo-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: rgba(230, 237, 243, 0.08);
+  color: rgba(230, 237, 243, 0.82);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.partido-card-centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.6rem;
+}
+
+.partido-card-marcador {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: rgba(230, 237, 243, 0.5);
+}
+
+.partido-card-marcador-finalizado {
+  color: var(--color-text);
+}
+
+.partido-card-separador {
+  color: rgba(230, 237, 243, 0.35);
+}
+
+.partido-card-hora {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(230, 237, 243, 0.52);
+}
+
+.partido-card-estado {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  color: #0D1117;
+  background: var(--color-accent-green);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .partido-card {
+    gap: 0.5rem;
+    padding: 0.75rem 0.75rem;
+  }
+
+  .partido-card-equipo-nombre {
+    font-size: 0.8rem;
+  }
+
+  .partido-card-estado {
+    font-size: 0.56rem;
+    padding: 0.18rem 0.4rem;
+  }
+}

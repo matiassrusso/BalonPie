@@ -1,0 +1,285 @@
+/* ── Header ─────────────────────────────────────── */
+
+.partido-header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #1e2530;
+}
+
+.partido-header-kicker {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(230, 237, 243, 0.45);
+  margin-bottom: 0.75rem;
+}
+
+.partido-header-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.partido-header-equipo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.partido-header-local {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.partido-header-visitante {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.partido-escudo {
+  width: clamp(4rem, 10vw, 5.5rem);
+  height: clamp(4rem, 10vw, 5.5rem);
+  object-fit: contain;
+}
+
+.partido-escudo-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(4rem, 10vw, 5.5rem);
+  height: clamp(4rem, 10vw, 5.5rem);
+  border-radius: 999px;
+  background: rgba(230, 237, 243, 0.1);
+  color: rgba(230, 237, 243, 0.82);
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.partido-header-nombre {
+  font-size: clamp(0.75rem, 2vw, 0.92rem);
+  font-weight: 700;
+  color: rgba(230, 237, 243, 0.82);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.partido-header-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.partido-score {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.partido-estado {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(230, 237, 243, 0.52);
+}
+
+.partido-estado-vivo {
+  color: var(--color-accent-green);
+}
+
+/* ── Secciones compartidas ──────────────────────── */
+
+.partido-seccion-header {
+  display: flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.45rem 0.1rem 0.45rem 0.75rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid #1e2530;
+  border-bottom: 1px solid #1e2530;
+  border-left: 3px solid var(--color-accent-green);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(230, 237, 243, 0.7);
+}
+
+.partido-vacio {
+  padding: 1rem 0.1rem;
+  border-bottom: 1px solid #1e2530;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(230, 237, 243, 0.52);
+}
+
+/* ── Timeline de eventos ─────────────────────────── */
+
+.eventos-grid {
+  display: grid;
+}
+
+.evento-fila {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2.8rem minmax(0, 1fr);
+  align-items: center;
+  min-height: 2.2rem;
+  border-bottom: 1px solid #1e2530;
+}
+
+.evento-local,
+.evento-visitante {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.3rem 0.1rem;
+}
+
+.evento-local {
+  justify-content: flex-end;
+}
+
+.evento-visitante {
+  justify-content: flex-start;
+}
+
+.evento-minuto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(230, 237, 243, 0.45);
+}
+
+.evento-jugador {
+  font-size: 0.84rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.icono-gol {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent-green);
+}
+
+.icono-gol-pp {
+  background: #e53e3e;
+}
+
+.icono-amarilla {
+  flex-shrink: 0;
+  width: 7px;
+  height: 10px;
+  background: var(--color-accent-gold);
+  border-radius: 1px;
+}
+
+.icono-roja {
+  flex-shrink: 0;
+  width: 7px;
+  height: 10px;
+  background: #e53e3e;
+  border-radius: 1px;
+}
+
+.icono-otro {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(230, 237, 243, 0.3);
+}
+
+/* ── Estadísticas ────────────────────────────────── */
+
+.stats-comparativa {
+  display: grid;
+}
+
+.stat-fila {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.65rem 0.1rem 0.55rem;
+  border-bottom: 1px solid #1e2530;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stat-valor-local {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.stat-valor-visitante {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.stat-nombre {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(230, 237, 243, 0.45);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.stat-barra-container {
+  height: 4px;
+  background: rgba(230, 237, 243, 0.08);
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-barra-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(61, 220, 132, 0.6), var(--color-accent-green));
+  border-radius: 999px;
+}
+
+/* ── Mobile ──────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .partido-header-nombre {
+    font-size: 0.72rem;
+  }
+
+  .partido-header-main {
+    gap: 0.5rem;
+  }
+
+  .evento-fila {
+    grid-template-columns: minmax(0, 1fr) 2.4rem minmax(0, 1fr);
+  }
+
+  .evento-jugador {
+    font-size: 0.78rem;
+  }
+}

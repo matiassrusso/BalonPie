@@ -1,0 +1,138 @@
+.alin-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.alin-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.alin-label-local,
+.alin-label-visitante {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.alin-label-local {
+  color: var(--color-accent-green);
+  opacity: 0.8;
+}
+
+.alin-label-visitante {
+  color: #e06b6b;
+  opacity: 0.8;
+}
+
+.alin-campo {
+  position: relative;
+  background: #1a3a28;
+  border: 1px solid #2a5a3a;
+  border-radius: 6px;
+  aspect-ratio: 7 / 5;
+  overflow: hidden;
+}
+
+.alin-linea-centro {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.alin-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  pointer-events: none;
+}
+
+.alin-circulo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.46rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #0d1117;
+}
+
+.alin-dot-local .alin-circulo {
+  background: var(--color-accent-green);
+  box-shadow: 0 0 0 2px rgba(61, 220, 132, 0.25);
+}
+
+.alin-dot-visitante .alin-circulo {
+  background: #e06b6b;
+  box-shadow: 0 0 0 2px rgba(224, 107, 107, 0.25);
+}
+
+.alin-nombre {
+  font-size: 0.42rem;
+  font-weight: 700;
+  color: rgba(230, 237, 243, 0.72);
+  white-space: nowrap;
+  text-align: center;
+  max-width: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Bancos ── */
+
+.alin-bancos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid #1e2530;
+}
+
+.alin-banco-titulo {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(230, 237, 243, 0.3);
+  margin-bottom: 0.35rem;
+}
+
+.alin-banco-jugador {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(230, 237, 243, 0.5);
+  padding: 0.1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.alin-banco-dt {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(230, 237, 243, 0.7);
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 480px) {
+  .alin-circulo {
+    width: 16px;
+    height: 16px;
+    font-size: 0.4rem;
+  }
+
+  .alin-nombre {
+    font-size: 0.38rem;
+  }
+}

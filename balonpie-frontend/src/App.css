@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-bg: #0D1117;
+  --color-bg-panel: #161b22;
+  --color-accent-green: #3DDC84;
+  --color-accent-gold: #F4C430;
+  --color-text: #E6EDF3;
+  --ticker-height: 2.2rem;
+  --sidebar-width: 220px;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 400;
+}
+
+a {
+  color: var(--color-accent-green);
+  text-decoration: none;
+}
+
+.app-shell {
+  min-height: calc(100vh - var(--ticker-height));
+}
+
+.app-main {
+  min-width: 0;
+}
+
+.app-content {
+  width: 100%;
+}
+
+.page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 1.25rem 1rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding-bottom: 2rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .app-shell {
+    padding-left: var(--sidebar-width);
+  }
+
+  .page {
+    padding: 1.35rem 1.6rem 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page {
+    padding: 1.5rem 2rem 2.5rem;
+  }
+}
+
+.partidos-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.tabla-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabla-posiciones {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.tabla-posiciones th, .tabla-posiciones td {
+  height: 2.75rem;
+  padding: 0 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #1e2530;
+  white-space: nowrap;
+}
+
+.tabla-posiciones th {
+  height: 2rem;
+  padding: 0 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(230, 237, 243, 0.45);
+}
+
+.tabla-posiciones td:nth-child(2) {
+  text-align: left;
+}
+
+.tabla-posiciones tbody tr:nth-child(even) {
+  background: #0f141a;
+}
+
+.tabla-posiciones tbody tr:hover {
+  background: rgba(230, 237, 243, 0.04);
+}
+
+.chip-forma {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  font-size: 0.62rem;
+  font-weight: 700;
+  margin-right: 0.12rem;
+}
+
+.chip-forma-W { background: var(--color-accent-green); color: #0D1117; }
+.chip-forma-D { background: rgba(230, 237, 243, 0.3); color: var(--color-text); }
+.chip-forma-L { background: #e25555; color: #0D1117; }
+
+.equipos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 2rem;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(230, 237, 243, 0.05);
+  border: 1px solid rgba(230, 237, 243, 0.08);
+  border-radius: 16px;
+  padding: 0.85rem;
+}
+
+.stat-valor {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.5rem;
+  color: var(--color-accent-green);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.eventos-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.eventos-lista li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(230, 237, 243, 0.08);
+  font-size: 0.9rem;
+}
+
+.evento-goal { color: var(--color-accent-green); }
+.evento-card { color: var(--color-accent-gold); }
+
+.estadisticas-comparativa {
+  width: 100%;
+  font-size: 0.85rem;
+  border-collapse: collapse;
+}
+
+.estadisticas-comparativa th.estadisticas-equipo {
+  width: 35%;
+  text-align: center;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--color-accent-green);
+}
+
+.estadisticas-comparativa td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid rgba(230, 237, 243, 0.06);
+}
+
+.estadisticas-comparativa td.estadisticas-valor {
+  width: 35%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.estadisticas-comparativa td.estadisticas-clave {
+  width: 30%;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.6;
+  text-transform: capitalize;
+}
