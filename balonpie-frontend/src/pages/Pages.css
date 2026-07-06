@@ -237,6 +237,11 @@
   padding: 0 0.2rem;
   border-bottom: 1px solid #1e2530;
   color: var(--color-text);
+  transition: box-shadow 0.15s;
+}
+
+.equipo-fila:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 .equipo-fila-main {

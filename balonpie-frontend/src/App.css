@@ -8,6 +8,8 @@
   --color-text: #E6EDF3;
   --ticker-height: 2.2rem;
   --sidebar-width: 220px;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
 }
 
 body {
@@ -15,6 +17,44 @@ body {
   color: var(--color-text);
   font-family: 'Inter', sans-serif;
   margin: 0;
+}
+
+/* Cursor spotlight — desktop pointer only, background-attachment: fixed keeps
+   the gradient anchored to the viewport (matching clientX/clientY) regardless of scroll. */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(61, 220, 132, 0.15), transparent 60%), var(--color-bg);
+    background-attachment: fixed;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: reduce) {
+  body {
+    background: radial-gradient(600px circle at 50% 50%, rgba(61, 220, 132, 0.15), transparent 60%), var(--color-bg);
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(230, 237, 243, 0.18) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(230, 237, 243, 0.18);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(230, 237, 243, 0.3);
 }
 
 h1, h2, h3 {

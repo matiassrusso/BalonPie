@@ -1,4 +1,5 @@
 import type { Partido } from "../api"
+import MotionCard from "./MotionCard"
 import PartidoCard from "./PartidoCard"
 
 function formatearDia(fechaIso: string): string {
@@ -38,8 +39,10 @@ export default function PartidosPorCompetencia({ partidos }: { partidos: readonl
             <span className="partidos-grupo-fecha">{grupo.fecha}</span>
           </header>
           <div className="partidos-grupo-lista">
-            {grupo.partidos.map((partido) => (
-              <PartidoCard key={partido.id} partido={partido} />
+            {grupo.partidos.map((partido, index) => (
+              <MotionCard key={partido.id} index={index}>
+                <PartidoCard partido={partido} />
+              </MotionCard>
             ))}
           </div>
         </section>

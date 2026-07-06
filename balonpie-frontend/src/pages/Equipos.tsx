@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { API_URL, type EquipoResumen } from "../api"
+import MotionCard from "../components/MotionCard"
 import "./Pages.css"
 
 const COMPETICION_ORDEN = [
@@ -69,16 +70,18 @@ export default function Equipos() {
           <section key={grupo.competencia} className="equipos-grupo">
             <header className="equipos-grupo-header">{grupo.competencia}</header>
             <div className="equipos-grupo-lista">
-              {grupo.equipos.map((equipo) => (
-                <Link key={equipo.slug} to={`/equipo/${equipo.slug}`} className="equipo-fila">
-                  <div className="equipo-fila-main">
-                    <img src={equipo.escudo} alt={`Escudo de ${equipo.nombre}`} className="equipo-fila-escudo" loading="lazy" />
-                    <span className="equipo-fila-nombre">{equipo.nombre}</span>
-                  </div>
-                  <span className="equipo-fila-chevron" aria-hidden="true">
-                    ›
-                  </span>
-                </Link>
+              {grupo.equipos.map((equipo, index) => (
+                <MotionCard key={equipo.slug} index={index}>
+                  <Link to={`/equipo/${equipo.slug}`} className="equipo-fila">
+                    <div className="equipo-fila-main">
+                      <img src={equipo.escudo} alt={`Escudo de ${equipo.nombre}`} className="equipo-fila-escudo" loading="lazy" />
+                      <span className="equipo-fila-nombre">{equipo.nombre}</span>
+                    </div>
+                    <span className="equipo-fila-chevron" aria-hidden="true">
+                      ›
+                    </span>
+                  </Link>
+                </MotionCard>
               ))}
             </div>
           </section>

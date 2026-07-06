@@ -66,7 +66,7 @@
   opacity: 0.72;
   font-size: 0.82rem;
   font-weight: 700;
-  transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .dock-item-icon {
@@ -78,6 +78,12 @@
 .dock-item:hover {
   opacity: 1;
   background: rgba(230, 237, 243, 0.06);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .dock-item:hover {
+    transform: translateX(4px);
+  }
 }
 
 .dock-item-active {

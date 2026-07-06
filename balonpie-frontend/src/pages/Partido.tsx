@@ -1,11 +1,14 @@
+import { m } from "framer-motion"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { API_URL, type EventoPartido, type LineupsPartido, type PartidoDetalle } from "../api"
 import AlineacionesCampo from "../components/AlineacionesCampo"
+import { useReducedMotion } from "../hooks/useReducedMotion"
 import "./Pages.css"
 import "./Partido.css"
 
 const ESTADOS_EN_VIVO = new Set(["1H", "2H", "HT", "ET", "P", "BT"])
+const EASE_OUT: [number, number, number, number] = [0.23, 1, 0.32, 1]
 
 const STAT_NOMBRES: Record<string, string> = {
   "Ball Possession": "Posesión",
@@ -178,6 +181,36 @@ function SeccionEventos({ detalle }: { readonly detalle: PartidoDetalle }) {
   )
 }
 
+function BarraStat({ pct }: { readonly pct: number }) {
+  const reduced = useReducedMotion()
+
+  if (reduced) {
+    return (
+      <div className="stat-barra-container">
+        <m.div
+          className="stat-barra-fill"
+          style={{ transform: `scaleX(${pct / 100})` }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2, ease: EASE_OUT }}
+        />
+      </div>
+    )
+  }
+
+  return (
+    <div className="stat-barra-container">
+      <m.div
+        className="stat-barra-fill"
+        initial={{ opacity: 0, transform: "scaleX(0)" }}
+        whileInView={{ opacity: 1, transform: `scaleX(${pct / 100})` }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: EASE_OUT }}
+      />
+    </div>
+  )
+}
+
 function SeccionEstadisticas({ detalle }: { readonly detalle: PartidoDetalle }) {
   const statsLocal = detalle.estadisticas[detalle.equipo_local] ?? {}
   const statsVisitante = detalle.estadisticas[detalle.equipo_visitante] ?? {}
@@ -203,11 +236,7 @@ function SeccionEstadisticas({ detalle }: { readonly detalle: PartidoDetalle }) 
                   <span className="stat-nombre">{nombreStat}</span>
                   <span className="stat-valor-visitante">{vVisitante ?? "—"}</span>
                 </div>
-                {pct !== null && (
-                  <div className="stat-barra-container">
-                    <div className="stat-barra-fill" style={{ width: `${pct}%` }} />
-                  </div>
-                )}
+                {pct !== null && <BarraStat pct={pct} />}
               </div>
             )
           })}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { API_URL, type PerfilEquipo } from "../api"
+import MotionCard from "../components/MotionCard"
 import PartidoCard from "../components/PartidoCard"
 import "./Pages.css"
 import "./Equipo.css"
@@ -102,8 +103,10 @@ export default function Equipo() {
         <header className="equipo-seccion-header">Resultados recientes</header>
         {tieneResultados ? (
           <div className="equipo-resultados-lista">
-            {resultados_recientes.map((partido) => (
-              <PartidoCard key={partido.id} partido={partido} />
+            {resultados_recientes.map((partido, index) => (
+              <MotionCard key={partido.id} index={index}>
+                <PartidoCard partido={partido} />
+              </MotionCard>
             ))}
           </div>
         ) : (
