@@ -1,4 +1,4 @@
-output/
+02 Attachments/playwright-output/
 *.log
 ESTADO.md
 CAMBIOS_Y_PENDIENTES.md
@@ -6,3 +6,6 @@ PLAN_MEJORAS.md
 AGENTS.md
 DECISIONES.md
 .claude/
+
+# Obsidian vault config (para trabajar este proyecto desde AI Brain)
+.obsidian/
