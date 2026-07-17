@@ -15,7 +15,7 @@ If a session is drifting without moving toward una de las features pendientes o 
 1. La idea sale de lo que falta en el README (`En desarrollo / In progress`) o de un bug encontrado al usar la app
 2. Se implementa en `balonpie-api` (backend) y/o `balonpie-frontend` (frontend)
 3. Tests de backend corren en verde antes de dar por cerrada una feature
-4. Deploy: push a `main` → Railway (backend) + Vercel (frontend) redeploy automático
+4. Deploy: push a `main` → Render (backend) + Vercel (frontend) redeploy automático
 
 ## Key People
 

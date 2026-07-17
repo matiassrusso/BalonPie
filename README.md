@@ -3,18 +3,18 @@
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
-![Deploy](https://img.shields.io/badge/deploy-Railway%20%2B%20Vercel-black?style=flat)
+![Deploy](https://img.shields.io/badge/deploy-Render%20%2B%20Vercel-black?style=flat)
 # BalonPie
 
 Estadísticas en tiempo real de la Liga Profesional Argentina — partidos, equipos, tablas de posiciones y alineaciones tácticas.
 
 🔗 **Demo:** [balon-pie.vercel.app](https://balon-pie.vercel.app)
-🔗 **API:** [balonpie-production.up.railway.app](https://balonpie-production.up.railway.app)
+🔗 **API:** [balonpie-api.onrender.com](https://balonpie-api.onrender.com)
 
 Real-time stats for the Argentine Liga Profesional — matches, teams, standings, and tactical lineups.
 
 🔗 **Live demo:** [balon-pie.vercel.app](https://balon-pie.vercel.app)
-🔗 **API:** [balonpie-production.up.railway.app](https://balonpie-production.up.railway.app)
+🔗 **API:** [balonpie-api.onrender.com](https://balonpie-api.onrender.com)
 
 ---
 
@@ -22,7 +22,7 @@ Real-time stats for the Argentine Liga Profesional — matches, teams, standings
 
 - **Backend:** Python, FastAPI
 - **Frontend:** React, TypeScript, Vite
-- **Deploy:** Railway (backend) · Vercel (frontend)
+- **Deploy:** Render (backend) · Vercel (frontend)
 - **Fuente de datos / Data source:** [API-Football](https://www.api-football.com/)
 - **Testing:** 47 tests pasando · 47 passing tests
 
